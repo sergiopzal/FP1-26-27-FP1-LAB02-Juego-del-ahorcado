@@ -106,6 +106,7 @@ def jugar(palabra_secreta:str, n_intentos = 6):
     if palabra_secreta == '':
         return None
     else:
+        palabra_org = palabra_secreta
         palabra_secreta = normalizar(palabra_secreta)
         palabra = normalizar(palabra_secreta)
         palabra = enmascarar(palabra)
@@ -128,10 +129,10 @@ def jugar(palabra_secreta:str, n_intentos = 6):
         ganador = ha_ganado(palabra)
     if ganador:
         print('Ha ganado!!')
-        print(f'La palabra secreta era: {palabra}')
+        print(f'La palabra secreta era: {palabra_org}')
     else:
         print('Ha perdido!')
-        print(f'La palabra secreta era: {palabra}')
+        print(f'La palabra secreta era: {palabra_org}')
        
 
-# TODO: Escribe el programa principal
+jugar(elige_palabra())
